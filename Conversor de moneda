@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class ConversorMoneda {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double tasaUSDaCOP = 3600.0; // Tasa de cambio USD a COP
+        double tasaEURaCOP = 4200.0; // Tasa de cambio EUR a COP
+
+        System.out.println("Bienvenido al conversor de moneda a pesos colombianos (COP)");
+        System.out.println("¿Qué tipo de moneda desea convertir?");
+        System.out.println("1. USD (Dólares estadounidenses)");
+        System.out.println("2. EUR (Euros)");
+        System.out.println("3. ARS (Pesos argentinos)");
+        System.out.println("4. MXN (Pesos mexicanos)");
+        System.out.print("Ingrese el número correspondiente a la moneda: ");
+
+        int opcion = scanner.nextInt();
+        double cantidad;
+
+        switch (opcion) {
+            case 1:
+                System.out.print("Ingrese la cantidad en USD: ");
+                cantidad = scanner.nextDouble();
+                double resultadoUSDaCOP = cantidad * tasaUSDaCOP;
+                System.out.println("$" + cantidad + " USD equivalen a " + resultadoUSDaCOP + " COP.");
+                break;
+            case 2:
+                System.out.print("Ingrese la cantidad en EUR: ");
+                cantidad = scanner.nextDouble();
+                double resultadoEURaCOP = cantidad * tasaEURaCOP;
+                System.out.println(cantidad + " EUR equivalen a " + resultadoEURaCOP + " COP.");
+                break;
+            case 3:
+                System.out.print("Ingrese la cantidad en ARS: ");
+                cantidad = scanner.nextDouble();
+                double resultadoARSaCOP = cantidad * 40.0; // Ejemplo: tasa aproximada ARS a COP
+                System.out.println("$" + cantidad + " ARS equivalen a " + resultadoARSaCOP + " COP.");
+                break;
+            case 4:
+                System.out.print("Ingrese la cantidad en MXN: ");
+                cantidad = scanner.nextDouble();
+                double resultadoMXNaCOP = cantidad * 180.0; // Ejemplo: tasa aproximada MXN a COP
+                System.out.println("$" + cantidad + " MXN equivalen a " + resultadoMXNaCOP + " COP.");
+                break;
+            default:
+                System.out.println("Opción no válida.");
+        }
+
+        scanner.close();
+    }
+}
